@@ -1,0 +1,78 @@
+***********************************************************************DJANGO PROJECT ***********************************************************************************
+REQUIREMENTS
+------------
+PYTHON - 3.8.5
+DJANGO - 3.1.3
+DBSLITE3
+APPLICATIONS- VSCODE OR SUBLIME OR ATOM ,CHROME
+
+*************************************************************************************************************************************************************************
+# DJANGO IS A HIGH LEVEL PYTHON WEB-FRAME WORK.IT IS FAST,SCALABLE,AND SECURE
+
+#INSTALLING PYTHON
+https://www.python.org/downloads/ 
+FROM THIS WEBSITE INSTALL THE REQUIRED VERSION OF PYTHON
+
+
+#DJANGO INSTALLATION
+pip install Django==3.1.4
+
+#CREATING A PROJECT
+django-admin startproject projectname
+after creating a project open the project folder we will find the following folders
+
+1.projectname - this folder consists of some sun folders
+$__pychache__-Python stores the compiled bytecode in __pycache__ directory so that future imports can use it directly, rather than having to parse and compile
+ the source again. It does not do that for merely running a script, only when a file is imported.
+
+$__init__.py-The __init__.py files are required to make Python treat the directories as containing packages; this is done to prevent directories with a common 
+name, such as string, from unintentionally hiding valid modules that occur later on the module search path.
+
+$asgi.py-Like WSGI, ASGI has you supply an application callable which the application server uses to communicate with your code. It's commonly provided as an
+ object named application in a Python module accessible to the server.
+
+$settings.py-settings.py is a core file in Django projects. It holds all the configuration values that your web app needs to work; database settings, logging
+ configuration,where to find static files, API keys if you work with external APIs, and a bunch of other stuff.
+
+$urls.py-Every page on the Internet needs its own URL. This way your application knows what it should show to a user who opens that URL. In Django, we use something
+ called URLconf (URL configuration). URLconf is a set of patterns that Django will try to match the requested URL to find the correct view.
+
+$wsgi.py-The main use of deploying with WSGI is the application callable which the application server uses to communicate with your code. It's commonly provided as an
+ object named application in a Python module accessible to the server.
+
+2.manage.py-Every Django project starts with a manage.py file in its root. It's a convenience script that allows you to run administrative tasks like Django's included 
+django-admin.
+#creating a app
+note: the app must be created inside the project.
+django-admin startapp appname or python manage.py startapp appname
+*after creating a app add the appname in the installed apps in settings.py
+by creating an app the project folder consists of
+1.appname
+2.project name
+3.manage.py
+4.dbsqlite3- The file is database file where all the data that you will be generating will be stored. It is a local file as Django is a server-side framework and it
+ treats your computer as the host when you actually run the server in command line/terminal. 
+the appname folder consists of some subfolders namely
+1.__pychache__
+
+2.migrations-Migrations are Django's way of propagating changes you make to your models (adding a field, deleting a model, etc.) into your database schema.
+ They're designed to be mostly automatic, but you'll need to know when to make migrations, when to run them, and the common problems you might run into.
+
+3.__init__.py
+
+4.admin.py-The admin.py file is used to display your models in the Django admin panel. You can also customize your admin panel. Hope this helps you.
+ Django has a builtin admin interface that reads metadata from your models, such as fields, and lets you perform CRUD operations for free
+
+5.apps.py-apps.py is a configuration file common to all Django apps. 
+
+6.models.py-models.py is where the models for your app are located.  
+
+7.views.py- views.py is where the views for your app are located.
+
+
+8.tests.py-tests.py contains test procedures that will be run when testing your app.
+
+#running server
+python manage.py runserver
+here after running this command we get a url like http://127.0.0.1:8000/
+by running this url in the browser we can see the app is running in our local host
