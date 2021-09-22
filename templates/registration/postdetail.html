@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Blog</title>
+</head>
+{% block content %}
+<body>
+
+<div class="row" align="center cen">
+	<div class="col-sm-2"></div>
+	<div class="col-sm-7" align="center" style="margin-left: 50px; margin-right:50px; ">
+		    
+				<h1>{{data.title}}</h1><hr>
+				<small>post created by , {{author_data.username}}</small><br>
+				<small>updated on , {{data.updated_on}}</small>
+				<img src="{{data.img.url}}" name = "image" style="margin: 20px,width : 100px,height:100px">
+				<h3>{{data.content}}</h3><hr><br><br>
+				{{ total }} Likes
+
+				<form action="{% url 'like_post' data.id %}" method="POST">
+					{% csrf_token %}
+					{% if is_liked %}
+					<button type="submit" name="post_id" value={{ data.id }} class="btn btn-danger">DisLike</button>
+					{% else %}
+					<button type="submit" name="post_id" value={{ data.id }} class="btn btn-primary">Like</button>
+					{% endif %}
+					
+				</form>
+	</div>
+    <div class="col-sm-3"></div>
+    <div class="col-sm-3">
+    			<form method="POST" action="{% url 'comment'%}">
+    				{% csrf_token %}
+					<textarea class="form-control" name="comment" cols="54" rows="5" ></textarea>
+					<br />
+					<button class="btn btn-primary form-control" type="submit" >Comment</button>
+
+				</form>
+
+				{% for i in commentperpost %}
+				<h4>{{i.content}}</h4>
+				<h4>commented by {{i.user.username}} </h4><br>
+				{% endfor %}
+    </div>
+</div>
+</body>
+{% endblock %}
+</html>

@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+<h2>Sign Up</h2>
+<!--<form method="POST">
+	{% csrf_token %}
+	{{ form.as_p}}
+	<button type="submit">Sign up</button>
+</form>-->
+<body>
+	<div class="row">
+		<div class="col-sm-3"></div>
+			<div class="col-sm-6" style="margin-top:30px ">
+				<h2>Sign Up</h2>
+				<div class="card">
+					<form method="POST">
+						{% csrf_token %}
+					<div class="card-header bg-info">Sign Up</div>
+					<div class="card-body">
+						{{ form|crispy }}
+					</div>
+					<div class="card-footer bg-info"><input type="submit" name="SignUp"></div>
+					</form>
+				</div>
+			</div>
+		<div class="col-sm-3">
+    </div>
+	
+</div>
+</body>
+{% endblock %}
+

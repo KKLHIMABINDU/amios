@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Blog</title>
+</head>
+{% block content %}
+<body>
+
+<div class="row" align="center cen">
+	<div class="col-sm-2"></div>
+	<div class="col-sm-7" align="center" style="margin-left: 50px; margin-right:50px; ">
+		    {% for i in data %}
+				<h1><a href="{% url 'post_detail' i.id%}">{{i.title}}</a></h1>
+				<small>{{i.updated_on}}</small>
+				<h3>{{i.content}}</h3>
+				<button><a href="{% url 'delete' i.id%}">Delete</a></button>
+				<button><a href="{% url 'edit' i.id%}">Edit</a></button>
+
+				<hr>
+            {% endfor %}
+		
+	</div>
+	<div class="col-sm-2">
+		<a href="{% url 'add' %}"><button class="btn btn-primary">ADD POST</button>
+	</div>
+	        
+</div>
+</body>
+{% endblock %}
+</html>

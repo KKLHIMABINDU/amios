@@ -1,0 +1,2 @@
+open cmd in this folder
+and type python manage.py runserver

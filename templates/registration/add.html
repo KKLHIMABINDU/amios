@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+<!---<form method="POST">
+	{% csrf_token %}
+	{{ form|crispy }}<br>
+	<button type="submit">Login</button>
+</form>-->
+{% load static %}
+<body>
+	<div class="row">
+		<div class="col-sm-3"></div>
+			<div class="col-sm-6" style="margin-top:30px ">
+				<h2>Add a new Post</h2>
+				<div class="card ">
+    <form method = "post" enctype="Multipart/form-data">         {% csrf_token %} 
+
+					<div class="card-header bg-info">Add Post</div>
+					<div class="card-body">
+						{{ form|crispy }}
+					</div>
+					<div class="card-footer bg-info"><input type="submit" name="Login"></div>
+					</form>
+				</div>
+			</div>
+		<div class="col-sm-3">
+    </div>
+	
+</div>
+</body>
+{% endblock %}
+

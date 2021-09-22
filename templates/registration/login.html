@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+<!---<form method="POST">
+	{% csrf_token %}
+	{{ form|crispy }}<br>
+	<button type="submit">Login</button>
+</form>-->
+<body>
+	<div class="row">
+		<div class="col-sm-3"></div>
+			<div class="col-sm-6" style="margin-top:30px ">
+				<h2>Log in</h2>
+				<div class="card">
+					<form method="POST">
+						{% csrf_token %}
+					<div class="card-header bg-info">Login</div>
+					<div class="card-body">
+						{{ form|crispy }}
+					</div>
+					<div class="card-footer bg-info"><input type="submit" name="Login"></div>
+					</form>
+				</div>
+			</div>
+		<div class="col-sm-3">
+    </div>
+	
+</div>
+</body>
+{% endblock %}
+
